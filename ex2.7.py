@@ -1,8 +1,11 @@
-import math
+def convert_to_bills(amount):
+    bills = [500, 200, 100, 50, 20, 10, 5]
+    result = {}
+    for bill in bills:
+        result[bill] = amount // bill
+        amount = amount % bill
+    return result
 
-def euros_to_bills():
-    euros = int(input("Please give euros: "))
-    if euros < 5:
-        print("This is not enough for a single bill!")
-    else:
-        
+euros = int(input("Please give euros (round down to closest five): "))
+bills = convert_to_bills(euros)
+print(euros, "is in bills:", bills)
