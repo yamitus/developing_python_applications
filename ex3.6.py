@@ -38,7 +38,7 @@ def bigheap():
     b = random.randint(0, 100)
     c = random.randint(0, 100)
     my_list = [a, b, c]
-    biggest = int(heapq.nlargest(1, my_list))
+    biggest = heapq.nlargest(1, my_list)
     result = my_list.index(biggest)
     if result == 0:
         print("A is biggest.")
